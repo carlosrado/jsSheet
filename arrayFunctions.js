@@ -1,4 +1,4 @@
-const characters = [
+  const characters = [
     {
         name: 'Luke Skywalker',
         height: '172',
@@ -34,9 +34,10 @@ const namesChar = characters.map(char => char.name)
 //Get an array of all heights
 const heightChar = characters.map(char => char.height)
 //Get an array of objects with just name and height properties
-const nameHeight = characters.map(char => {return {'name':char.name, 'height':char.height})
+const nameHeight = characters.map(char => { return { 'name': char.name, 'height': char.height } })
 //Get an array of all first names
 const firstName = characters.map(char => char.name.split(" ")[0])
+
 //REDUCE
 //Get the total mass of all characters
 const totalMass = characters.reduce((acc, cur) => acc + parseInt(cur.mass), 0);
@@ -45,7 +46,7 @@ const totalHeight = characters.reduce((acc, cur) => acc + parseInt(cur.height), 
 //Get the total number of characters in all the character names
 const totalChars = characters.reduce((acc, cur) => acc + cur.name.length, 0)
 //Get the total number of characters by eye color(hint.a map of eye color to count)
-const totalNumberOfCharsByEyeColor = characters.reduce((acc, cur) => {acc[cur.eye_color] ? acc[cur.eye_color]++ : acc[cur.eye_color] = 1; return acc}, {})
+const totalNumberOfCharsByEyeColor = characters.reduce((acc, cur) => { acc[cur.eye_color] ? acc[cur.eye_color]++ : acc[cur.eye_color] = 1; return acc }, {})
 //FILTER
 //Get characters with mass greater than 100
 const greateThan100 = characters.filter(character => character.mass > 100)
@@ -70,15 +71,16 @@ const hasMale = characters.some(c => c.gender == 'male')
 //Is there at least one character with blue eyes ?
 const hasBlueEyes = characters.some(c => c.eye_color == 'blue')
 //Is there at least one character taller than 200 ?
-const isTallerThan200 = characters.some(c => c.height > 200)
+const hasTallerThan200 = characters.some(c => c.height > 200)
 //Is there at least one character that has mass less than 50 ?
-const isLighterThan50 = characters.some(c =>  c.mass < 50)
+const hasLighterThan50 = characters.some(c =>  c.mass < 50)
 //EVERY
 //Does every character have blue eyes ?
 const everyHasBlueEyes = characters.every(c => c.eye_color == 'blue')
 //Does every character have mass more than 40 ?
 const everyMassOver40 = characters.every(c => c.mass > 40)
 //Is every character shorter than 200 ?
-const everyMassLess200 = characters.every(c => c.height < 200)
+const everyHeightLess200 = characters.every(c => c.height < 200)
 //Is every character male ?
 const everyFemale = characters.every(c => c.gender == 'female')
+
