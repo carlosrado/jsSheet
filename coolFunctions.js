@@ -12,7 +12,7 @@ const twoSum = (nums, target) => {
 	const complements = nums.map(n => target-n) // array of the complements number for the sum
 	const numsStr = nums.map(n => n.toString()) // nums parsed to string
 	let indexes = nums.map((num, i) =>
-		//if nums includes complement AND (num is not the same as complemen OR there is repetead value return index, else return undefinde)
+		//if nums includes complement AND (num is not the same as complemen OR there is repetead value) return index, else return undefinde)
 		nums.includes(target - num) && (nums[i] !== complements[i] || counts[numsStr[i]] > 1) ? i : undefined)
 		.filter((a) => Number.isInteger(a)) //Return only the integers
 	return indexes
